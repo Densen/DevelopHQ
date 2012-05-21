@@ -1,0 +1,300 @@
+
+
+
+@media print {
+@import "print.less";
+}
+
+// Variables and mixins
+@import "variables.less";
+@import "mixins.less";
+
+
+// fonts
+@font-face {
+    font-family: 'vincHandRegular';
+    src: url('../fonts/VincHand.eot');
+    src: url('../fonts/VincHand.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/VincHand.woff') format('woff'),
+         url('../fonts/VincHand.ttf') format('truetype'),
+         url('../fonts/VincHand.svg#vincHandRegular') format('svg');
+} 
+
+@font-face {
+font-family: 'Negotiate';
+src: url('../fonts/Negotiate.eot');
+src: local('☺'), url('../fonts/Negotiate.woff') format('woff'), url('../fonts/Negotiate.ttf') format('truetype'), url('../fonts/Negotiate.svg#webfontkWcpQs7b') format('svg');
+font-weight: normal;
+font-style: normal;
+}
+
+
+
+
+// General Site
+html {
+	-webkit-overflow-scrolling : touch; 
+	-webkit-tap-highlight-color : lighten(@basecolor, 30%); 
+	-webkit-text-size-adjust : 100%; 
+	-webkit-font-smoothing: antialiased; 	
+}
+
+body {	
+	background-image:url(../img/back.jpg);
+	background-repeat:repeat;
+	div.container-fluid{
+		padding-top:20px;
+
+		h1 {
+			font-family:vincHandRegular;
+			color:@basecolor;
+			font-weight:normal;
+		}
+
+		blockquote {
+			font-family:'vincHandRegular' !important; 
+			font-size:26px;
+			line-height:1.1em;
+			border-left:none;	
+		}
+
+		// Header Section logo and nav
+		div.row-fluid.header {
+			padding-bottom:30px;
+			section.brand{
+  				text-align:center;
+  				padding-bottom:40px;
+			}
+			section.details{
+				text-align:center;
+			}
+			nav{
+				display: block;	
+				clear:both; 
+				margin:0 auto;
+				em{
+					font-family:'vincHandRegular',sans-serif;font-size:22px;font-style:normal;line-height:normal;font-weight:normal;
+					display: block;
+					color:@basecolor;
+					width:80px;
+				}		
+				a {
+					color:@grey;
+					text-transform:uppercase;
+					.font-size(7.25px);
+					font-family:'Negotiate';
+					padding-top:7px; 
+				}		
+			}	
+			nav.create{
+				background-image:url(../img/arrow.png);
+				background-repeat:no-repeat;
+				padding-left:50px;
+				width:350px;	
+				position: relative;
+				left:-120px;		
+				em {
+					position: relative;
+					left:-80px;
+					top:-25px;
+				}				
+			}
+			nav.service{
+				background-image:url(../img/arrow-service.png);
+				background-repeat:no-repeat;
+				background-position:right;	
+				width:320px;	
+				height:50px;
+				position: relative;
+				left:130px;	
+				top:-15px;	
+				z-index:150;
+				em {
+					position: relative;
+					top:-30px;
+					left:260px;
+				}				
+			}
+			nav.us{
+				background-image:url(../img/arrow-us.png);
+				background-repeat:no-repeat;	
+				background-position:right;	
+				width:300px;
+				height:100px;
+				position: relative;
+				left:20px;
+				top:-30px;
+				z-index:100;
+				em {
+					position: relative;
+					top:50px;
+					left:230px;
+				}				
+			}						
+
+		}
+
+		// Page Header Definition
+		div.row-fluid.define{
+			.arrow-define {
+				background-image:url(../img/arrow-header.png);
+				background-repeat:no-repeat;
+				background-position:right;
+				display: block;
+				position: relative;
+				top:-50px;
+				left:20px;
+				height:100px;
+				h1 {
+					width:400px;
+					text-align:left;
+					padding-left:30px;
+				}
+				img {
+					position: relative;
+					left:80px;
+					top:10px;
+				}	
+			}
+			section {
+				blockquote {
+					text-rendering:optimizeLegibility;
+    				font-weight: normal;
+    				font-size:28px;
+					color:#666;
+    				float:left;
+				}
+			}				
+
+		}
+
+		// Page Content 
+		div.row-fluid.content{
+			padding-top:30px;
+			header {
+				border-top:1px solid rgba(228,228,228,1);
+				text-align:center;
+				h2 {
+					font-family:'Negotiate';
+					color:darken(@grey, 10);
+					.font-size(14);
+					background-color:rgba(248,248,248,1);
+					display: inline;
+					position: relative;
+					top:-18px;
+					padding-left:10px;
+					padding-right:10px;
+				}
+			}
+			section {
+				h2 {
+					font-family:'Negotiate';
+					color:darken(@grey, 10);
+					.font-size(12);
+					line-height:1.1em;
+					padding-bottom:18px;
+					font-weight:normal;
+				}
+				p {
+					font-family:'Negotiate';
+					color:@grey;
+					.font-size(11);
+					line-height:1.1em;
+					padding-bottom:6px;
+				}
+				ul {
+					font-family:'Negotiate';
+					color:@grey;
+					.font-size(11);					
+				}
+				address {
+					font-family:'Negotiate';
+					font-style:italic;
+					color:@grey;
+					.font-size(10);					
+				}
+			}			
+		}
+
+		// Team 
+		div.row-fluid.team{			
+
+		}
+
+		// Hire
+		div.row-fluid.hire{
+			section {
+				form{
+					fieldset {
+						legend {
+							font-family:'Negotiate';
+							color:@grey;
+							.font-size(13);
+							line-height:1.1em;
+						}
+						input {
+							font-family:'Negotiate';
+							color:@grey;
+							.font-size(9);
+							line-height:1.1em;							
+						}
+					}
+				}
+			}
+		}
+
+		// Details
+		div.row-fluid.details{
+			section.details {
+				p{
+					text-align:center;
+					.font-size(8);
+				}
+
+			}
+		}
+	}
+}
+
+// 480px
+@media only screen and (min-width: 480px) {
+@import "480.less";
+}
+
+// 600px
+@media only screen and (min-width: 600px) {
+@import "600.less";
+}
+
+// 768px
+@media only screen and (min-width: 768px) {
+@import "768.less";
+}
+
+// 992px
+@media only screen and (min-width: 992px) {
+@import "992.less";
+  	.container-fluid{ 
+  		max-width:1000px;
+  		margin:0 auto;
+  	} 
+}
+
+// 1382px
+@media only screen and (min-width: 1382px) {
+@import "1382.less";
+}
+
+// 2x
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5), 
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+@import "2x.less"; }
+
+
+
+
+
+ 
+
