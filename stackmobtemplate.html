@@ -13,8 +13,8 @@
 <script type="text/javascript">
 /* <![CDATA[ */
   StackMob.init({
-   appName: 'your app name',
-   clientSubdomain: 'your subdomain',
+   appName: 'develophq',
+   clientSubdomain: 'densen',
    apiVersion: 0
   });
 /* ]]> */
@@ -24,18 +24,42 @@
 <body>
 
 
-<h1>Simple Template</h1>
+<h1>Add Contact</h1>s
 
-<p>This is an empty HTML file that has the JS libraries included so that you can get started!  View source and edit to start!</p>
+<div class="form">
+	<input id="create" type="submit" onclick="create();" value="Create Enquiry" class="button"/>
+</div>
 
-<!-- 
-This is a simple template so that you can get started.  
-It has all the JS libraries included for you already.  
-You can also choose to use Zepto.js or Sencha's ExtJS in place of jQuery.  Simply replace the jQuery include.
--->
 
 <script type="text/javascript">
-/* Your code can go here */
+
+  function create() {
+
+  	//prepare the enquiry as JSON
+  	var enquiryjson = {
+  		'name': 'Dave Hudson',
+  		'email': 'dave@densen.co.uk',
+  		'enquiry': 'This is my enquiry, this feels like WP & EE on steroids'
+  	};
+    
+    var contact = new StackMob.Contact(enquiryjson);
+    contact.create(callbacks());
+    
+  function callbacks() {
+
+    var callback = {
+        success: function(model) {
+			alert('Enquiry Created');	
+        },
+        error: function(model, response) {
+        	alert('Enquiry creation failed');
+        }
+      };
+
+    return callback;
+  }
+      
+      
 </script>
 
 
